@@ -1,0 +1,9 @@
+---
+- name: Shut Down Windows Machine
+  hosts: windows
+  gather_facts: no
+  tasks:
+    - name: Shut down Windows
+      ansible.windows.win_shutdown:
+        msg: "System shutting down via AWX."
+        timeout: 30
