@@ -1,0 +1,8 @@
+---
+- name: Shutdown Windows Machine
+  hosts: windows
+  gather_facts: no
+  tasks:
+    - name: Shut down Windows
+      ansible.windows.win_shutdown:
+        reboot: no
