@@ -4,4 +4,4 @@
   become: yes
   tasks:
     - name: Shutdown the server
-      ansible.builtin.command: /sbin/shutdown -h now
+      ansible.builtin.command: sudo shutdown -h now
