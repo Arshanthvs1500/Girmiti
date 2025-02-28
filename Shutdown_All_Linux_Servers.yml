@@ -3,6 +3,14 @@
   hosts: all
   become: yes
   tasks:
+    - name: Notify about shutdown
+      debug:
+        msg: "Shutting down the server in 5 seconds..."
+
+    - name: Wait for 5 seconds
+      ansible.builtin.pause:
+        seconds: 5
+
     - name: Shutdown the server
       ansible.builtin.command: /sbin/shutdown -h now
-      ignore_errors: yes  # This prevents AWX from marking the job as "failed"
+      ignore_errors: yes
